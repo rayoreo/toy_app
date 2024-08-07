@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @user %>
+
+<% if @user.microposts.length > 0 %>
+  <%= render @user.microposts.first %> 
+  <% else %>
+  <%= 'No micropost records found' %>
+<% end %>
+<br><br>
+<div>
+  <%= link_to "Edit this user", edit_user_path(@user) %> |
+  <%= link_to "Back to users", users_path %>
+
+  <%= button_to "Destroy this user", @user, method: :delete %>
+</div>
